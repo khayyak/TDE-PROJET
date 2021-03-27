@@ -1,0 +1,40 @@
+{
+   "type": "undirected",
+   "id": "CUG2",
+   "order": "5",
+   "size": "4",
+   "label": "Airline Connections in Southwestern USA",
+   "node": [
+      {
+         "id": "LAX2",
+         "degree": "2",
+         "adj": "#LVG2 #PHX2",
+         "label": "LAX2"
+      },
+      {
+         "id": "LVG2",
+         "degree": "2",
+         "adj": "#LAX2 #PHX2",
+         "label": "LVG2"
+      },
+      {
+         "id": "PHX2",
+         "degree": "3",
+         "adj": "#LAX2 #LVG2 #TUS2",
+         "label": "PHX2"
+      },
+      {
+         "id": "TUS2",
+         "degree": "1",
+         "adj": "#PHX2",
+         "label": "TUS2"
+      },
+      {
+         "id": "CIB2",
+         "degree": "0",
+         "label": "CIB2",
+	 "adj" : ""
+      }
+   ]
+}
+

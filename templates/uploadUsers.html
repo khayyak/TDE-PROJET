@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% block body %}
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
+});
+    
+    </script>
+
+    <script>
+function resetData(){
+    setTimeout(function(){ document.getElementById('source').value='';
+            document.getElementById('titre').value='';
+            document.getElementById('source').value='';
+        }, 800);
+             }
+        </script>
+</head>
+<section>
+
+  
+      <div class="row" style="margin-top: -50px;">
+        <div class="col-lg-5 mx-auto">
+          <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+  
+            <!-- Default bootstrap file upload-->
+  
+            <h6 class="text-center mb-4 text-muted">
+              Importer votre fichier .JSON
+            </h6>
+            <form class="ourForm" method="POST" action="/userstoTei" enctype="multipart/form-data">
+            <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <label for="customFile" class="custom-file-label rounded-pill">Choisir un fichier</label>
+              <input id="customFile" type="file" name="users" class="custom-file-input rounded-pill">
+            </div>
+            <input type="text" name="source" placeholder="Source de votre fichier JSON" id="source" class="form-control" aria-describedby="passwordHelpBlock">
+            <br>
+            <input type="text" name = "Titre" placeholder="Titre pour votre fichier XML/TEI" id="titre" class="form-control" aria-describedby="passwordHelpBlock">
+            <br>
+            <!-- End -->
+            <center>
+            <button type="submit" class="btn btn-outline-success" id="btn"  onclick="resetData()">Convertir en XML-TEI</button>
+            </center>
+            </form>
+            <!-- Custom bootstrap upload file-->
+            
+            <!-- End -->
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  </html>
+{% endblock %}
+
+<style>
+    .file-upload input[type='file'] {
+  display: none;
+}
+
+body {
+  background: #00B4DB;
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  height: 100vh;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.custom-file-label.rounded-pill {
+  border-radius: 50rem;
+}
+
+.custom-file-label.rounded-pill::after {
+  border-radius: 0 50rem 50rem 0;
+}
+</style>

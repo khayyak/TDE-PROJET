@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block body %}
+<section>
+    <div class="container p-5">
+      <!-- For demo purpose -->
+      <div class="row mb-5 text-center text-white">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="display-4">File upload button </h1>
+          <p class="lead">Build a simple file upload button using Bootstrap 4.</p>
+        </div>
+      </div>
+      <!-- End -->
+  
+  
+      <div class="row">
+        <div class="col-lg-5 mx-auto">
+          <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+  
+            <!-- Default bootstrap file upload-->
+  
+            <h6 class="text-center mb-4 text-muted">
+              Importez votre fichier .CSV
+            </h6>
+            <form method="POST" action="/arabictoTei" enctype="multipart/form-data">
+            <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <label for="jsonarabic" class="custom-file-label rounded-pill">Choisir un fichier</label>
+              <input id="jsonarabic" type="file" name="jsonarabic" class="custom-file-input rounded-pill">
+            </div>
+            <!-- End -->
+            <button type="submit" class="btn btn-outline-success" style="margin-left: 30%;">Convertir en XML-TEI</button>
+            </form>
+            <!-- Custom bootstrap upload file-->
+            
+            <!-- End -->
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+  $('#customFile').on('change',function(){
+      alert("Hi");
+      //get the file name
+      var fileName = $(this).val();
+      //replace the "Choose a file" label
+      $(this).next('.custom-file-label').html(fileName);
+  })
+})
+  </script>
+{% endblock %}
+<style>
+    .file-upload input[type='file'] {
+  display: none;
+}
+
+body {
+  background: #00B4DB;
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  height: 100vh;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.custom-file-label.rounded-pill {
+  border-radius: 50rem;
+}
+
+.custom-file-label.rounded-pill::after {
+  border-radius: 0 50rem 50rem 0;
+}
+</style>

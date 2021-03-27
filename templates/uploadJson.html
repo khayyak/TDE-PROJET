@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block body %}
+<section id="gallery" style="margin-top: -50px;">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://www.linkpicture.com/q/arab.jpg" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">قصيدة عربية</h5>
+          <p class="card-text">En cliquant sur le bouton ci dessous, vous allez convertir un fichier de la forme Poéme.</p>
+         
+          <a href="/uploadarabic" class="btn btn-outline-primary">Ouvrir</a>
+          <br><br>
+         <form method="POST" action="/arabicEx" enctype="multipart/form-data">
+         <button type="submit" class="btn btn-outline-warning"><i class="fas fa-long-arrow-alt-down"></i>Exemple</button>
+        </form>
+
+        </div>
+       </div>
+      </div>
+    <div class="col-lg-4 mb-4">
+    <div class="card">
+        <img src="https://www.linkpicture.com/q/utilisateurs2_1.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Liste des utilisateurs</h5>
+          <p class="card-text">En cliquant sur le bouton ci dessous, vous allez convertir un fichier de la forme Liste.</p>
+          <a href="/uploadUsers" class="btn btn-outline-primary">Ouvrir</a>
+          <br><br>
+         <form method="POST" action="/usersEx" enctype="multipart/form-data">
+         <button type="submit" class="btn btn-outline-warning"><i class="fas fa-long-arrow-alt-down"></i>Exemple</button>
+        </form>
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://www.linkpicture.com/q/Graphe_2.png" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Graphe</h5>
+          <p class="card-text">  En cliquant sur le bouton ci dessous, vous allez convertir un fichier de la forme Graphe.</p>
+          <a href="/uploadGraph" class="btn btn-outline-primary">Ouvrir</a>
+          <br><br>
+         <form method="POST" action="/graphEx" enctype="multipart/form-data">
+         <button type="submit" class="btn btn-outline-warning"><i class="fas fa-long-arrow-alt-down"></i>Exemple</button>
+        </form>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  </section>  
+{% endblock %}
+    
